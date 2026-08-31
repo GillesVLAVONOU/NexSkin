@@ -1,0 +1,10 @@
+RewriteEngine On
+
+RewriteRule ^(\.env|\.installed)$ - [F,L]
+RewriteRule ^(app|config|database|routes|storage)(/|$) - [F,L]
+
+RewriteCond %{REQUEST_URI} !^/install\.php$
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]

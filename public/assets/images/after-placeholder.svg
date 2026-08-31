@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <rect width="800" height="450" fill="#EFF6FF"/>
+  <rect x="0" y="0" width="800" height="450" fill="url(#grad)"/>
+  <!-- Laptop shape -->
+  <rect x="200" y="100" width="400" height="250" rx="12" fill="#2563EB" opacity="0.15" stroke="#2563EB" stroke-width="2"/>
+  <rect x="215" y="115" width="370" height="220" rx="6" fill="white"/>
+  <!-- Keyboard base -->
+  <rect x="170" y="355" width="460" height="20" rx="4" fill="#2563EB" opacity="0.2" stroke="#2563EB" stroke-width="1.5"/>
+  <!-- Custom design pattern -->
+  <circle cx="400" cy="225" r="60" fill="#2563EB" opacity="0.1"/>
+  <circle cx="400" cy="225" r="40" fill="#2563EB" opacity="0.15"/>
+  <circle cx="400" cy="225" r="20" fill="#2563EB" opacity="0.25"/>
+  <!-- Decorative lines -->
+  <line x1="280" y1="170" x2="520" y2="170" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
+  <line x1="280" y1="280" x2="520" y2="280" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
+  <line x1="280" y1="170" x2="280" y2="280" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
+  <line x1="520" y1="170" x2="520" y2="280" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
+  <!-- NexSkin mark -->
+  <text x="400" y="230" text-anchor="middle" font-family="Manrope, sans-serif" font-size="16" font-weight="700" fill="#2563EB">NEXSKIN</text>
+  <!-- Label -->
+  <text x="400" y="420" text-anchor="middle" font-family="Manrope, sans-serif" font-size="14" fill="#2563EB">APRÈS — NexSkin Personalized</text>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="800" y2="450">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#DBEAFE"/>
+    </linearGradient>
+  </defs>
+</svg>

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .form-label {
+        @apply block text-sm font-medium text-nex-dark mb-1.5;
+    }
+
+    .form-input {
+        @apply w-full px-4 py-2.5 rounded-lg border border-nex-border bg-white text-nex-dark text-sm
+               placeholder:text-nex-gray-light
+               focus:outline-none focus:ring-2 focus:ring-nex-blue/20 focus:border-nex-blue
+               transition-colors duration-200;
+    }
+
+    .file-input {
+        @apply file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0
+               file:text-sm file:font-medium file:bg-nex-blue-pale file:text-nex-blue
+               file:cursor-pointer file:transition-colors
+               hover:file:bg-blue-100;
+    }
+}
