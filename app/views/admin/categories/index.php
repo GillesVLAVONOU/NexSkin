@@ -10,8 +10,8 @@
 </div>
 
 <div class="bg-white rounded-xl border border-nex-border overflow-hidden">
-    <div class="overflow-x-auto">
-        <table class="admin-table">
+    <div class="admin-table-wrapper">
+        <table class="admin-table admin-table--categories">
             <thead>
                 <tr>
                     <th>Nom</th>

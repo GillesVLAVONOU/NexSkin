@@ -37,8 +37,37 @@
 /* Table */
 .admin-table {
     width: 100%;
-    min-width: 600px;
     border-collapse: collapse;
+}
+
+.admin-table-wrapper {
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: auto;
+    scrollbar-color: #9ca3af #f3f4f6;
+}
+
+.admin-table-wrapper::-webkit-scrollbar {
+    height: 10px;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-track {
+    background: #f3f4f6;
+}
+
+.admin-table-wrapper::-webkit-scrollbar-thumb {
+    background: #9ca3af;
+    border-radius: 5px;
+}
+
+.admin-table--projects {
+    min-width: 760px;
+}
+
+.admin-table--categories {
+    min-width: 620px;
 }
 
 .admin-table th {

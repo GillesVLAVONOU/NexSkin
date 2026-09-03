@@ -50,7 +50,7 @@
             </div>
         </aside>
 
-        <div class="flex-1 lg:ml-64">
+        <div class="flex-1 min-w-0 lg:ml-64">
             <header class="bg-white border-b border-nex-border sticky top-0 z-40">
                 <div class="flex items-center justify-between px-4 sm:px-6 py-4">
                     <button id="sidebar-toggle" class="lg:hidden p-2 text-nex-gray hover:text-nex-dark" aria-label="Ouvrir le menu admin"><i data-lucide="menu" class="w-5 h-5"></i></button>
