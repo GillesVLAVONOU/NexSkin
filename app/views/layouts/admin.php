@@ -21,7 +21,7 @@
     <?php endif; ?>
 
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
-    <link rel="stylesheet" href="<?= asset('css/admin.css') ?>">
+    <link rel="stylesheet" href="<?= asset('css/admin.css') ?>?v=<?= filemtime(ROOT_PATH . '/public/assets/css/admin.css') ?>">
 </head>
 <body class="font-manrope bg-nex-bg text-nex-dark antialiased">
     <div class="flex min-h-screen">
@@ -73,7 +73,7 @@
     </div>
 
     <div id="sidebar-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
-    <script src="<?= asset('js/admin.js') ?>" defer></script>
+    <script src="<?= asset('js/admin.js') ?>?v=<?= filemtime(ROOT_PATH . '/public/assets/js/admin.js') ?>" defer></script>
     <script>
         window.addEventListener('DOMContentLoaded', function () {
             if (window.lucide) window.lucide.createIcons();

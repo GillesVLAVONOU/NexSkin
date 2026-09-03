@@ -53,6 +53,7 @@
             </tbody>
         </table>
     </div>
+    <div class="admin-table-scrollbar" aria-hidden="true"><div></div></div>
 </div>
 
 <div id="add-category-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">

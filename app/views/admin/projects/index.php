@@ -86,6 +86,7 @@
             </tbody>
         </table>
     </div>
+    <div class="admin-table-scrollbar" aria-hidden="true"><div></div></div>
 </div>
 
 <!-- Pagination -->

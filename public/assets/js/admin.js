@@ -25,6 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    document.querySelectorAll('.admin-table-wrapper').forEach(wrapper => {
+        const scrollbar = wrapper.nextElementSibling;
+        const thumb = scrollbar?.firstElementChild;
+        if (!thumb || wrapper.scrollWidth <= wrapper.clientWidth) {
+            scrollbar?.remove();
+            return;
+        }
+
+        const updateScrollbar = () => {
+            const visibleRatio = wrapper.clientWidth / wrapper.scrollWidth;
+            const thumbWidth = Math.max(visibleRatio * 100, 12);
+            const travel = 100 - thumbWidth;
+            const progress = wrapper.scrollLeft / (wrapper.scrollWidth - wrapper.clientWidth);
+            thumb.style.width = `${thumbWidth}%`;
+            thumb.style.transform = `translateX(${progress * travel / thumbWidth * 100}%)`;
+        };
+
+        wrapper.addEventListener('scroll', updateScrollbar, { passive: true });
+        window.addEventListener('resize', updateScrollbar);
+        updateScrollbar();
+    });
+
     // File upload preview
     document.querySelectorAll('input[type="file"]').forEach(input => {
         input.addEventListener('change', function() {

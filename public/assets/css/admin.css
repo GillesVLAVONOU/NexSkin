@@ -36,30 +36,39 @@
 
 /* Table */
 .admin-table {
-    width: 100%;
+    width: max-content;
+    min-width: 100%;
     border-collapse: collapse;
 }
 
 .admin-table-wrapper {
+    display: block;
     width: 100%;
-    overflow-x: scroll;
+    max-width: 100%;
+    overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: auto;
-    scrollbar-color: #9ca3af #f3f4f6;
+    scrollbar-width: none;
 }
 
 .admin-table-wrapper::-webkit-scrollbar {
-    height: 10px;
+    display: none;
 }
 
-.admin-table-wrapper::-webkit-scrollbar-track {
+.admin-table-scrollbar {
+    height: 8px;
+    margin: 0 0.75rem 0.75rem;
     background: #f3f4f6;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.admin-table-wrapper::-webkit-scrollbar-thumb {
+.admin-table-scrollbar > div {
+    height: 100%;
+    width: 25%;
     background: #9ca3af;
-    border-radius: 5px;
+    border-radius: 4px;
+    transition: transform 0.05s linear, width 0.1s linear;
 }
 
 .admin-table--projects {
