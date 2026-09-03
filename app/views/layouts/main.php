@@ -20,7 +20,7 @@
     <link rel="icon" type="image/svg+xml" href="<?= asset('images/favicon.svg') ?>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=Sintony:wght@400;700&display=swap" rel="stylesheet">
 
     <?php if (($_ENV['APP_ENV'] ?? 'development') === 'production'): ?>
     <link rel="stylesheet" href="<?= asset('css/tailwind.css') ?>?v=<?= filemtime(ROOT_PATH . '/public/assets/css/tailwind.css') ?>">
@@ -49,7 +49,7 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js" defer></script>
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>?v=<?= filemtime(ROOT_PATH . '/public/assets/css/style.css') ?>">
 </head>
-<body class="font-manrope bg-white text-nex-dark antialiased">
+<body class="bg-white text-nex-dark antialiased">
     <?php $siteSettings = $settings ?? []; ?>
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-transparent transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -1,5 +1,19 @@
 /* NexSkin Custom Styles */
 
+/* Brand typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Sintony', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
