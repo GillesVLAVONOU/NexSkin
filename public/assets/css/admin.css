@@ -36,8 +36,7 @@
 
 /* Table */
 .admin-table {
-    width: max-content;
-    min-width: 100%;
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -72,11 +71,26 @@
 }
 
 .admin-table--projects {
-    min-width: 760px;
+    min-width: 0;
 }
 
 .admin-table--categories {
-    min-width: 620px;
+    min-width: 0;
+}
+
+@media (max-width: 767px) {
+    .admin-table {
+        width: max-content;
+        min-width: 100%;
+    }
+
+    .admin-table--projects {
+        min-width: 760px;
+    }
+
+    .admin-table--categories {
+        min-width: 620px;
+    }
 }
 
 .admin-table th {
