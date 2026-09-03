@@ -1,4 +1,4 @@
-<div class="flex items-center justify-between mb-8">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
     <div>
         <h1 class="text-2xl font-bold text-nex-dark">Catégories</h1>
         <p class="text-sm text-nex-gray-light mt-1"><?= count($categories) ?> catégorie(s)</p>
@@ -56,7 +56,7 @@
 </div>
 
 <div id="add-category-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-    <div class="bg-white rounded-2xl p-6 w-full max-w-md mx-4 shadow-xl">
+    <div class="admin-modal-panel bg-white rounded-2xl p-6 w-full max-w-md mx-4 shadow-xl">
         <div class="flex items-center justify-between mb-6">
             <h2 class="text-lg font-bold text-nex-dark">Ajouter une catégorie</h2>
             <button type="button" onclick="this.closest('.fixed').classList.add('hidden')" class="text-nex-gray hover:text-nex-dark" aria-label="Fermer">
@@ -86,7 +86,7 @@
 </div>
 
 <div id="edit-category-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-    <div class="bg-white rounded-2xl p-6 w-full max-w-md mx-4 shadow-xl">
+    <div class="admin-modal-panel bg-white rounded-2xl p-6 w-full max-w-md mx-4 shadow-xl">
         <div class="flex items-center justify-between mb-6">
             <h2 class="text-lg font-bold text-nex-dark">Modifier la catégorie</h2>
             <button type="button" onclick="this.closest('.fixed').classList.add('hidden')" class="text-nex-gray hover:text-nex-dark" aria-label="Fermer">

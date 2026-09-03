@@ -1,4 +1,4 @@
-<div class="flex items-center justify-between mb-8">
+<div class="flex flex-wrap items-center justify-between gap-4 mb-8">
     <div>
         <h1 class="text-2xl font-bold text-nex-dark">Réalisations</h1>
         <p class="text-sm text-nex-gray-light mt-1"><?= $pagination['total'] ?> réalisation(s) au total</p>

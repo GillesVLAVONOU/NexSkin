@@ -37,6 +37,7 @@
 /* Table */
 .admin-table {
     width: 100%;
+    min-width: 600px;
     border-collapse: collapse;
 }
 
@@ -60,6 +61,16 @@
 
 .admin-table tr:hover td {
     background: #f9fafb;
+}
+
+.admin-table th:last-child,
+.admin-table td:last-child {
+    white-space: nowrap;
+}
+
+.admin-modal-panel {
+    max-height: calc(100dvh - 2rem);
+    overflow-y: auto;
 }
 
 /* File upload */
