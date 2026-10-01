@@ -1,6 +1,6 @@
 <!-- Hero -->
-<section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-gradient-to-b from-nex-blue-pale/30 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="interior-hero about-page-hero">
+    <div class="interior-shell text-center">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-nex-dark mb-4 fade-in">
             À propos
         </h1>
@@ -11,12 +11,12 @@
 </section>
 
 <!-- Story -->
-<section class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<section class="interior-section about-story-section">
+    <div class="interior-shell">
+        <div class="about-story-grid">
             <!-- Logo -->
             <div class="fade-in">
-                <div class="rounded-2xl overflow-hidden shadow-lg bg-white aspect-[4/3] flex items-center justify-center p-12">
+                <div class="about-brand-card rounded-2xl overflow-hidden bg-white flex items-center justify-center p-12">
                     <img src="<?= asset('images/logo-mark.png') ?>"
                          alt="NexSkin Logo"
                          class="w-48 h-48 object-contain"
@@ -46,15 +46,15 @@
 </section>
 
 <!-- Values -->
-<section class="py-16 lg:py-24 bg-nex-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-section about-values-section">
+    <div class="interior-shell">
         <div class="text-center mb-12 fade-in">
             <h2 class="text-3xl sm:text-4xl font-bold text-nex-dark">
                 Nos valeurs.
             </h2>
         </div>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="about-values-grid">
             <?php
             $values = [
                 ['icon' => 'sparkles', 'title' => 'Créativité', 'desc' => 'Chaque projet est une nouvelle occasion de créer quelque chose d\'unique.'],
@@ -62,21 +62,21 @@
                 ['icon' => 'heart', 'title' => 'Passion', 'desc' => 'Nous aimons ce que nous faisons, et ça se voit dans chaque réalisation.'],
             ];
             foreach ($values as $index => $value): ?>
-            <div class="bg-white p-8 rounded-2xl border border-nex-border text-center fade-in fade-in-delay-<?= $index + 1 ?>">
+            <article class="about-value-card text-center fade-in fade-in-delay-<?= $index + 1 ?>">
                 <div class="w-14 h-14 bg-nex-blue-pale rounded-xl flex items-center justify-center mx-auto mb-4">
                     <i data-lucide="<?= $value['icon'] ?>" class="w-7 h-7 text-nex-blue"></i>
                 </div>
                 <h3 class="text-xl font-semibold text-nex-dark mb-3"><?= $value['title'] ?></h3>
                 <p class="text-sm text-nex-gray leading-relaxed"><?= $value['desc'] ?></p>
-            </div>
+            </article>
             <?php endforeach; ?>
         </div>
     </div>
 </section>
 
 <!-- CTA -->
-<section class="py-16 lg:py-24 bg-nex-blue">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+<section class="interior-cta">
+    <div class="interior-shell interior-cta-content text-center fade-in">
         <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
             Envie de nous rencontrer ?
         </h2>

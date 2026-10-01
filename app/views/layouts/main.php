@@ -51,15 +51,15 @@
 </head>
 <body class="bg-white text-nex-dark antialiased">
     <?php $siteSettings = $settings ?? []; ?>
-    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-transparent transition-all duration-300">
+    <header id="site-header" class="site-header fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-transparent transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16 lg:h-20">
-                <a href="<?= url('/') ?>" class="flex items-center gap-2 group">
+                <a href="<?= url('/') ?>" class="site-brand flex items-center gap-2 group">
                     <img src="<?= asset('images/logo-mark.png') ?>" alt="" class="w-8 h-8 lg:w-10 lg:h-10 transition-transform group-hover:scale-105">
-                    <span class="font-bold text-xl lg:text-2xl text-nex-dark">Nex<span class="text-nex-blue">Skin</span></span>
+                    <span class="font-bold text-xl lg:text-2xl text-nex-dark">Nex<span class="text-nex-blue">Skin</span><small>PERSONALISE YOUR TECH</small></span>
                 </a>
 
-                <nav class="hidden lg:flex items-center gap-8" aria-label="Navigation principale">
+                <nav class="site-nav hidden lg:flex items-center gap-8" aria-label="Navigation principale">
                     <a href="<?= url('/') ?>" class="nav-link text-sm font-medium text-nex-gray hover:text-nex-dark transition-colors <?= isActive('/') ?>">Accueil</a>
                     <a href="<?= url('/realisations') ?>" class="nav-link text-sm font-medium text-nex-gray hover:text-nex-dark transition-colors <?= isActive('/realisations') ?>">Réalisations</a>
                     <a href="<?= url('/services') ?>" class="nav-link text-sm font-medium text-nex-gray hover:text-nex-dark transition-colors <?= isActive('/services') ?>">Services</a>
@@ -68,7 +68,7 @@
                 </nav>
 
                 <div class="hidden lg:block">
-                    <a href="<?= url('/contact') ?>" class="inline-flex items-center gap-2 bg-nex-blue hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25">
+                    <a href="<?= url('/contact') ?>" class="site-nav-cta inline-flex items-center gap-2 bg-nex-blue hover:bg-blue-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25">
                         Mon custom
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
@@ -80,7 +80,7 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="lg:hidden hidden">
+        <div id="mobile-menu" class="site-mobile-menu lg:hidden hidden">
             <div class="bg-white border-t border-nex-border px-4 py-6 space-y-4 text-center">
                 <a href="<?= url('/') ?>" class="block text-base font-medium text-nex-dark <?= isActive('/') ?>">Accueil</a>
                 <a href="<?= url('/realisations') ?>" class="block text-base font-medium text-nex-gray hover:text-nex-dark <?= isActive('/realisations') ?>">Réalisations</a>
@@ -101,49 +101,59 @@
         <?= $content ?>
     </main>
 
-    <footer class="bg-nex-bg border-t border-nex-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-                <div class="lg:col-span-2">
-                    <a href="<?= url('/') ?>" class="flex items-center gap-2 mb-3">
-                        <img src="<?= asset('images/logo-mark.png') ?>" alt="" class="w-7 h-7">
-                        <span class="font-bold text-lg text-nex-dark">Nex<span class="text-nex-blue">Skin</span></span>
+    <footer class="site-footer">
+        <div class="footer-shell">
+            <div class="footer-main">
+                <section class="footer-brand" aria-label="NexSkin">
+                    <a href="<?= url('/') ?>" class="footer-logo">
+                        <img src="<?= asset('images/logo-mark.png') ?>" alt="" loading="lazy">
+                        <span>Nex<span>Skin</span></span>
                     </a>
-                    <p class="text-nex-gray text-xs leading-relaxed max-w-md">Votre ordinateur. Votre style.</p>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-nex-dark text-sm mb-3">Navigation</h3>
-                    <ul class="space-y-2">
-                        <li><a href="<?= url('/') ?>" class="text-xs text-nex-gray hover:text-nex-blue transition-colors">Accueil</a></li>
-                        <li><a href="<?= url('/realisations') ?>" class="text-xs text-nex-gray hover:text-nex-blue transition-colors">Réalisations</a></li>
-                        <li><a href="<?= url('/services') ?>" class="text-xs text-nex-gray hover:text-nex-blue transition-colors">Services</a></li>
-                        <li><a href="<?= url('/a-propos') ?>" class="text-xs text-nex-gray hover:text-nex-blue transition-colors">À propos</a></li>
-                        <li><a href="<?= url('/contact') ?>" class="text-xs text-nex-gray hover:text-nex-blue transition-colors">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 class="font-semibold text-nex-dark text-sm mb-3">Suivez-nous</h3>
-                    <div class="flex gap-2">
+                    <p><?= escapeHtml($siteSettings['description'] ?? $siteSettings['slogan'] ?? 'Votre ordinateur. Votre style.') ?></p>
+                    <div class="footer-socials" aria-label="Réseaux sociaux">
                         <?php if (!empty($siteSettings['instagram'])): ?>
-                        <a href="<?= escapeHtml($siteSettings['instagram']) ?>" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-nex-blue-pale rounded-full flex items-center justify-center text-nex-blue hover:bg-nex-blue hover:text-white transition-all" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="<?= escapeHtml($siteSettings['instagram']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i data-lucide="instagram" aria-hidden="true"></i></a>
                         <?php endif; ?>
                         <?php if (!empty($siteSettings['facebook'])): ?>
-                        <a href="<?= escapeHtml($siteSettings['facebook']) ?>" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-nex-blue-pale rounded-full flex items-center justify-center text-nex-blue hover:bg-nex-blue hover:text-white transition-all" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                        <a href="<?= escapeHtml($siteSettings['facebook']) ?>" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i data-lucide="facebook" aria-hidden="true"></i></a>
                         <?php endif; ?>
                         <?php if (!empty($siteSettings['tiktok'])): ?>
-                        <a href="<?= escapeHtml($siteSettings['tiktok']) ?>" target="_blank" rel="noopener noreferrer" class="w-8 h-8 bg-nex-blue-pale rounded-full flex items-center justify-center text-nex-blue hover:bg-nex-blue hover:text-white transition-all" aria-label="TikTok"><i data-lucide="music-2" class="w-4 h-4"></i></a>
+                        <a href="<?= escapeHtml($siteSettings['tiktok']) ?>" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i data-lucide="music-2" aria-hidden="true"></i></a>
                         <?php endif; ?>
                     </div>
-                </div>
+                </section>
+
+                <nav class="footer-navigation" aria-label="Navigation de pied de page">
+                    <h2>Explorer</h2>
+                    <ul>
+                        <li><a href="<?= url('/') ?>">Accueil</a></li>
+                        <li><a href="<?= url('/realisations') ?>">Réalisations</a></li>
+                        <li><a href="<?= url('/services') ?>">Services</a></li>
+                        <li><a href="<?= url('/a-propos') ?>">À propos</a></li>
+                    </ul>
+                </nav>
+
+                <section class="footer-contact">
+                    <h2>Un projet en tête ?</h2>
+                    <p>Parlons de votre idée et de la personnalisation qui vous correspond.</p>
+                    <?php if (!empty($siteSettings['email'])): ?>
+                    <a class="footer-contact-link" href="mailto:<?= escapeHtml($siteSettings['email']) ?>"><i data-lucide="mail" aria-hidden="true"></i><?= escapeHtml($siteSettings['email']) ?></a>
+                    <?php endif; ?>
+                    <?php if (!empty($siteSettings['phone'])): ?>
+                    <a class="footer-contact-link" href="tel:<?= escapeHtml(preg_replace('/[^0-9+]/', '', $siteSettings['phone'])) ?>"><i data-lucide="phone" aria-hidden="true"></i><?= escapeHtml($siteSettings['phone']) ?></a>
+                    <?php endif; ?>
+                    <?php if (!empty($siteSettings['address'])): ?>
+                    <p class="footer-address"><i data-lucide="map-pin" aria-hidden="true"></i><?= escapeHtml($siteSettings['address']) ?></p>
+                    <?php endif; ?>
+                    <a href="<?= url('/contact') ?>" class="footer-contact-button">Nous contacter <i data-lucide="arrow-up-right" aria-hidden="true"></i></a>
+                </section>
             </div>
 
-            <div class="border-t border-nex-border mt-6 pt-5 flex flex-col sm:flex-row justify-between items-center gap-3">
-                <p class="text-xs text-nex-gray-light">&copy; <?= currentYear() ?> NexSkin. Tous droits réservés.</p>
-                <div class="flex gap-4">
-                    <a href="<?= url('/mentions-legales') ?>" class="text-xs text-nex-gray-light hover:text-nex-gray transition-colors">Mentions légales</a>
-                    <a href="<?= url('/politique-confidentialite') ?>" class="text-xs text-nex-gray-light hover:text-nex-gray transition-colors">Politique de confidentialité</a>
+            <div class="footer-bottom">
+                <p>&copy; <?= currentYear() ?> NexSkin. Tous droits réservés.</p>
+                <div>
+                    <a href="<?= url('/mentions-legales') ?>">Mentions légales</a>
+                    <a href="<?= url('/politique-confidentialite') ?>">Politique de confidentialité</a>
                 </div>
             </div>
         </div>

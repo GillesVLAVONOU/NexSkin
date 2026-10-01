@@ -101,7 +101,7 @@ Le projet utilise un **MVC maison** (pas de framework externe) avec :
 ## Fonctionnalités
 
 ### Site Public
-- **Accueil** : Hero, réalisations en vedette, avant/après, services, processus
+- **Accueil** : Carrousel Hero administrable, animations de section, réalisations en vedette, avant/après, services, processus
 - **Réalisations** : Galerie filtrable, pagination, page projet détaillée
 - **Services** : Présentation des offres de personnalisation
 - **À propos** : Histoire et valeurs de la marque
@@ -113,7 +113,7 @@ Le projet utilise un **MVC maison** (pas de framework externe) avec :
 - **Réalisations** : CRUD complet, gestion de la galerie, avant/après
 - **Catégories** : CRUD avec modales
 - **Messages** : Gestion des demandes de contact avec statuts
-- **Paramètres** : Configuration du site, réseaux sociaux, SEO
+- **Paramètres** : Configuration du site, réseaux sociaux, SEO et images du carrousel d’accueil (jusqu’à 8 images)
 
 ### Technique
 - **Upload sécurisé** : Vérification MIME, taille, renommage aléatoire, conversion WebP

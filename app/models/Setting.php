@@ -22,6 +22,7 @@ class Setting extends Model
         'meta_description',
         'hero_title',
         'hero_subtitle',
+        'hero_images',
         'contact_notification_email',
     ];
 

@@ -1,6 +1,6 @@
 <!-- Hero -->
-<section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-gradient-to-b from-nex-blue-pale/30 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="interior-hero services-page-hero">
+    <div class="interior-shell text-center">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-nex-dark mb-4 fade-in">
             Nos services
         </h1>
@@ -11,11 +11,11 @@
 </section>
 
 <!-- Services -->
-<section class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-2 gap-12">
+<section class="interior-section services-page-section">
+    <div class="interior-shell">
+        <div class="service-detail-grid">
             <!-- Habillage personnalisé -->
-            <div class="bg-white p-8 lg:p-10 rounded-2xl border border-nex-border fade-in">
+            <article class="service-detail-card fade-in">
                 <div class="w-14 h-14 bg-nex-blue-pale rounded-xl flex items-center justify-center mb-6">
                     <i data-lucide="layers" class="w-7 h-7 text-nex-blue"></i>
                 </div>
@@ -37,10 +37,10 @@
                         Compatible avec la plupart des modèles
                     </li>
                 </ul>
-            </div>
+            </article>
 
             <!-- Design sur mesure -->
-            <div class="bg-white p-8 lg:p-10 rounded-2xl border border-nex-border fade-in fade-in-delay-1">
+            <article class="service-detail-card fade-in fade-in-delay-1">
                 <div class="w-14 h-14 bg-nex-blue-pale rounded-xl flex items-center justify-center mb-6">
                     <i data-lucide="pen-tool" class="w-7 h-7 text-nex-blue"></i>
                 </div>
@@ -62,10 +62,10 @@
                         Modifications incluses
                     </li>
                 </ul>
-            </div>
+            </article>
 
             <!-- Impression & préparation -->
-            <div class="bg-white p-8 lg:p-10 rounded-2xl border border-nex-border fade-in fade-in-delay-2">
+            <article class="service-detail-card fade-in fade-in-delay-2">
                 <div class="w-14 h-14 bg-nex-blue-pale rounded-xl flex items-center justify-center mb-6">
                     <i data-lucide="printer" class="w-7 h-7 text-nex-blue"></i>
                 </div>
@@ -87,10 +87,10 @@
                         Découpe précise au millimètre
                     </li>
                 </ul>
-            </div>
+            </article>
 
             <!-- Pose du skin -->
-            <div class="bg-white p-8 lg:p-10 rounded-2xl border border-nex-border fade-in fade-in-delay-3">
+            <article class="service-detail-card fade-in fade-in-delay-3">
                 <div class="w-14 h-14 bg-nex-blue-pale rounded-xl flex items-center justify-center mb-6">
                     <i data-lucide="hand" class="w-7 h-7 text-nex-blue"></i>
                 </div>
@@ -112,11 +112,11 @@
                         Retrait possible sans dommage
                     </li>
                 </ul>
-            </div>
+            </article>
         </div>
 
         <!-- Projet personnalisé -->
-        <div class="mt-12 bg-nex-blue-pale rounded-2xl p-8 lg:p-12 fade-in">
+        <div class="service-custom-card fade-in">
             <div class="flex flex-col lg:flex-row items-center gap-8">
                 <div class="w-16 h-16 bg-nex-blue rounded-xl flex items-center justify-center flex-shrink-0">
                     <i data-lucide="lightbulb" class="w-8 h-8 text-white"></i>
@@ -137,8 +137,8 @@
 </section>
 
 <!-- CTA -->
-<section class="py-16 lg:py-24 bg-nex-blue">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+<section class="interior-cta">
+    <div class="interior-shell interior-cta-content text-center fade-in">
         <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
             Prêt à transformer votre ordinateur ?
         </h2>

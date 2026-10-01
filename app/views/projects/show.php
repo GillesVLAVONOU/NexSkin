@@ -1,6 +1,15 @@
+<?php
+$whatsappNumber = preg_replace('/\D+/', '', (string) ($settings['whatsapp'] ?? ''));
+$customPageUrl = url('/realisations/' . rawurlencode($project['slug']));
+$customImageUrl = !empty($project['cover_image']) ? getImageUrl($project['cover_image']) : '';
+$whatsappMessage = "Bonjour NexSkin, je souhaite ce custom : {$project['title']}.\nFiche : {$customPageUrl}";
+if ($customImageUrl !== '') {
+    $whatsappMessage .= "\nImage : {$customImageUrl}";
+}
+?>
 <!-- Project Header -->
-<section class="pt-32 pb-8 lg:pt-40 lg:pb-12 bg-gradient-to-b from-nex-blue-pale/30 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-hero project-detail-hero">
+    <div class="interior-shell">
         <!-- Breadcrumb -->
         <nav class="flex items-center gap-2 text-sm text-nex-gray-light mb-6 fade-in">
             <a href="<?= url('/') ?>" class="hover:text-nex-blue transition-colors">Accueil</a>
@@ -18,6 +27,14 @@
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-nex-dark fade-in">
                     <?= escapeHtml($project['title']) ?>
                 </h1>
+                <?php if ($whatsappNumber !== ''): ?>
+                <a href="https://wa.me/<?= escapeHtml($whatsappNumber) ?>?text=<?= rawurlencode($whatsappMessage) ?>"
+                   class="project-request-button fade-in"
+                   target="_blank" rel="noopener noreferrer">
+                    <i data-lucide="message-circle" aria-hidden="true"></i>
+                    Je veux ce custom
+                </a>
+                <?php endif; ?>
             </div>
             <?php if ($project['project_date']): ?>
             <p class="text-sm text-nex-gray-light fade-in">
@@ -29,8 +46,8 @@
 </section>
 
 <!-- Cover Image -->
-<section class="pb-12 lg:pb-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-section project-detail-cover">
+    <div class="interior-shell">
         <?php if ($project['cover_image']): ?>
         <div class="rounded-2xl overflow-hidden shadow-lg fade-in">
             <img src="<?= getImageUrl($project['cover_image']) ?>"
@@ -43,8 +60,8 @@
 
 <!-- Project Details -->
 <?php if ($project['description']): ?>
-<section class="py-12 lg:py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-section project-detail-description">
+    <div class="interior-reading-shell">
         <div class="prose prose-lg max-w-none fade-in">
             <?= nl2brHtml($project['description']) ?>
         </div>
@@ -54,8 +71,8 @@
 
 <!-- Gallery -->
 <?php if (!empty($project['images'])): ?>
-<section class="py-12 lg:py-16 bg-nex-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-section project-detail-gallery">
+    <div class="interior-shell">
         <h2 class="text-2xl font-bold text-nex-dark mb-8 fade-in">Galerie</h2>
         <div class="gallery-grid">
             <?php foreach ($project['images'] as $index => $image): ?>
@@ -73,8 +90,8 @@
 
 <!-- Before / After -->
 <?php if ($project['before_image'] && $project['after_image']): ?>
-<section class="py-12 lg:py-16 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-section project-detail-comparison">
+    <div class="interior-reading-shell">
         <h2 class="text-2xl font-bold text-nex-dark mb-8 text-center fade-in">Avant / Après</h2>
         <div class="before-after-container rounded-xl overflow-hidden shadow-lg aspect-video bg-gray-100 fade-in">
             <div class="before-after-after">
@@ -92,9 +109,9 @@
 <?php endif; ?>
 
 <!-- Navigation -->
-<section class="py-8 border-t border-nex-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center">
+<section class="project-detail-navigation">
+    <div class="interior-shell">
+        <div class="project-navigation-links">
             <?php if ($prevProject): ?>
             <a href="<?= url('/realisations/' . escapeHtml($prevProject['slug'])) ?>" class="flex items-center gap-2 text-sm text-nex-gray hover:text-nex-blue transition-colors">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
@@ -122,8 +139,8 @@
 
 <!-- Related Projects -->
 <?php if (!empty($relatedProjects)): ?>
-<section class="py-16 lg:py-24 bg-nex-bg">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="interior-section project-detail-related">
+    <div class="interior-shell">
         <h2 class="text-2xl font-bold text-nex-dark mb-8 fade-in">Projets similaires</h2>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <?php foreach ($relatedProjects as $index => $related): ?>
@@ -151,8 +168,8 @@
 <?php endif; ?>
 
 <!-- CTA -->
-<section class="py-16 lg:py-24 bg-nex-blue">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in">
+<section class="interior-cta">
+    <div class="interior-shell interior-cta-content text-center fade-in">
         <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
             Vous avez une idée similaire ?
         </h2>

@@ -3,7 +3,14 @@
     <p class="text-sm text-nex-gray-light mt-1">Configuration générale du site</p>
 </div>
 
-<form method="POST" action="<?= url('/admin/settings') ?>" class="space-y-8">
+<?php if (!empty($success)): ?>
+<div role="status" class="mb-6 rounded-xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700"><?= escapeHtml($success) ?></div>
+<?php endif; ?>
+<?php if (!empty($error)): ?>
+<div role="alert" class="mb-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"><?= escapeHtml($error) ?></div>
+<?php endif; ?>
+
+<form method="POST" action="<?= url('/admin/settings') ?>" enctype="multipart/form-data" class="space-y-8">
     <?= \App\Core\Request::csrfField() ?>
 
     <!-- Company Info -->
@@ -83,6 +90,33 @@
                 <textarea name="hero_subtitle" rows="2" class="form-input resize-none"><?= escapeHtml($settings['hero_subtitle'] ?? '') ?></textarea>
             </div>
         </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-nex-border p-6">
+        <h2 class="font-semibold text-nex-dark mb-2">Carrousel de la page d’accueil</h2>
+        <p class="text-sm text-nex-gray-light mb-5">Ajoutez jusqu’à 8 images. Formats acceptés : JPG, PNG et WebP, 5 Mo maximum par image.</p>
+        <?php
+        $heroImages = json_decode($settings['hero_images'] ?? '[]', true);
+        $heroImages = is_array($heroImages) ? $heroImages : [];
+        ?>
+        <?php if ($heroImages): ?>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-5">
+            <?php foreach ($heroImages as $index => $heroImage): ?>
+            <label class="group relative overflow-hidden rounded-xl border border-nex-border cursor-pointer">
+                <img src="<?= getImageUrl($heroImage) ?>" alt="Image <?= $index + 1 ?> du carrousel" class="h-32 w-full object-cover">
+                <span class="flex items-center gap-2 p-2 text-xs text-nex-gray">
+                    <input type="checkbox" name="remove_hero_images[]" value="<?= (int) $index ?>" class="rounded border-nex-border text-nex-blue focus:ring-nex-blue">
+                    Retirer du carrousel
+                </span>
+            </label>
+            <?php endforeach; ?>
+        </div>
+        <?php else: ?>
+        <p class="text-sm text-nex-gray mb-5">Aucune image ajoutée. Le visuel actuel reste utilisé tant que le carrousel est vide.</p>
+        <?php endif; ?>
+        <label for="hero_images" class="form-label">Ajouter des images</label>
+        <input id="hero_images" type="file" name="hero_images[]" accept="image/jpeg,image/png,image/webp" multiple class="form-input">
+        <p id="hero-images-status" class="mt-2 text-xs text-nex-gray-light" aria-live="polite"></p>
     </div>
 
     <div class="flex justify-end">

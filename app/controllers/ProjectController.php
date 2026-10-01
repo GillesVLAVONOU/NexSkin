@@ -6,6 +6,7 @@ use App\Core\Controller;
 use App\Core\Request;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\Setting;
 
 class ProjectController extends Controller
 {
@@ -59,6 +60,7 @@ class ProjectController extends Controller
 
         $prevProject = $projectModel->getPrevious($project['id']);
         $nextProject = $projectModel->getNext($project['id']);
+        $settings = (new Setting())->getAll();
 
         $this->view('projects.show', [
             'pageTitle' => $project['title'] . ' - NexSkin',
@@ -67,6 +69,7 @@ class ProjectController extends Controller
             'relatedProjects' => $relatedProjects,
             'prevProject' => $prevProject,
             'nextProject' => $nextProject,
+            'settings' => $settings,
         ]);
     }
 }

@@ -1,6 +1,6 @@
 <!-- Hero -->
-<section class="pt-32 pb-12 lg:pt-40 lg:pb-16 bg-gradient-to-b from-nex-blue-pale/30 to-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<section class="interior-hero contact-page-hero">
+    <div class="interior-shell text-center">
         <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-nex-dark mb-4 fade-in">
             Contact
         </h1>
@@ -11,12 +11,12 @@
 </section>
 
 <!-- Contact Section -->
-<section class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+<section class="interior-section contact-page-section">
+    <div class="interior-shell">
+        <div class="contact-layout">
             <!-- Form -->
-            <div class="lg:col-span-3 fade-in">
-                <div class="bg-white p-8 lg:p-10 rounded-2xl border border-nex-border shadow-sm">
+            <div class="contact-form-column fade-in">
+                <div class="contact-form-card">
                     <h2 class="text-2xl font-bold text-nex-dark mb-2">Envoyez-nous votre projet</h2>
                     <p class="text-nex-gray text-sm mb-8">
                         Vous avez déjà votre design ou simplement une idée ? Remplissez le formulaire ci-dessous.
@@ -124,10 +124,10 @@
             </div>
 
             <!-- Info Sidebar -->
-            <div class="lg:col-span-2 fade-in fade-in-delay-1">
-                <div class="space-y-8">
+            <div class="contact-info-column fade-in fade-in-delay-1">
+                <div class="contact-info-list">
                     <!-- WhatsApp -->
-                    <div class="bg-white p-6 rounded-2xl border border-nex-border">
+                    <div class="contact-info-card">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
                                 <img src="<?= asset('images/whatsapp.svg') ?>" alt="WhatsApp" class="w-7 h-7">
@@ -146,7 +146,7 @@
                     </div>
 
                     <!-- Email -->
-                    <div class="bg-white p-6 rounded-2xl border border-nex-border">
+                    <div class="contact-info-card">
                         <div class="flex items-center gap-4 mb-4">
                             <div class="w-12 h-12 bg-nex-blue-pale rounded-xl flex items-center justify-center">
                                 <i data-lucide="mail" class="w-6 h-6 text-nex-blue"></i>
@@ -163,7 +163,7 @@
                     </div>
 
                     <!-- Social -->
-                    <div class="bg-white p-6 rounded-2xl border border-nex-border">
+                    <div class="contact-info-card">
                         <h3 class="font-semibold text-nex-dark mb-4">Suivez-nous</h3>
                         <div class="flex gap-3">
                             <?php if (!empty($settings['instagram'])): ?>
