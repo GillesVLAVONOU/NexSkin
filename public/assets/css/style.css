@@ -936,6 +936,10 @@ body {
     from { opacity: 0; transform: translate3d(0, -10px, 0) scale(.97); }
     to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
+#site-header .site-mobile-menu.is-closing > div { animation: navbar-menu-exit .18s ease-in forwards; transform-origin: top center; pointer-events: none; }
+@keyframes navbar-menu-exit {
+    to { opacity: 0; transform: translate3d(0, -8px, 0) scale(.98); }
+}
 #site-header .site-mobile-menu:not(.hidden) > div > a:nth-child(2) { animation-delay: .04s; }
 #site-header .site-mobile-menu:not(.hidden) > div > a:nth-child(3) { animation-delay: .08s; }
 #site-header .site-mobile-menu:not(.hidden) > div > a:nth-child(4) { animation-delay: .12s; }
